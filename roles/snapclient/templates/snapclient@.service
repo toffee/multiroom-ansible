@@ -1,0 +1,20 @@
+[Unit]
+Description=Snapcast client %i
+Documentation=man:snapclient(1)
+Wants=avahi-daemon.service
+After=network-online.target time-sync.target sound.target avahi-daemon.service rc-local.service
+
+[Service]
+EnvironmentFile=-/etc/default/snapclient
+#Ugly method to start snapclient after moode /var/www/command/worker.php finish his initialisations
+#the problem is calling /usr/local/bin/moodeutl -f to initializa $_SESSION['audio_formats'] while the alsa card is used.
+#If the alsa card is used (by snapclient) while calling moodeutl -f, the php call session_start in function audio_formats
+#hangs waiting probbaly for file lock (probably session is already started in worker.php). 
+ExecStartPre=/bin/sleep 30
+ExecStart=/usr/bin/snapclient --logsink=system $SNAPCLIENT_OPTS_%i
+User=snapclient
+Group=snapclient
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

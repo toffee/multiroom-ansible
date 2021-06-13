@@ -34,28 +34,17 @@
   stat: path=/lib/systemd/system/snapclient.service
   register: original_unit
 
-- name: configure snapclient systemd unit
-  command: mv /lib/systemd/system/snapclient.service /lib/systemd/system/snapclient@.service
-  when: original_unit.stat.exists
-
-- name: modify snapclient systemd unit file
-  lineinfile:
-    path: "/lib/systemd/system/snapclient@.service"
-    regexp: "^Description=Snapcast client"
-    line: "Description=Snapcast client %i"
-  notify: 
+- name: "copy snapclient service file"
+  template:
+    src: "templates/snapclient@.service"
+    dest: "/lib/systemd/system/snapclient@.service"
+    owner: root
+    group: root
+    mode: 0644
+  notify:
     - restart snapclient@left
     - restart snapclient@right
 
-- name: modify snapclient systemd unit file
-  lineinfile:
-    path: "/lib/systemd/system/snapclient@.service"
-    regexp: "^ExecStart"
-    line: "ExecStart=/usr/bin/snapclient --logsink=system $SNAPCLIENT_OPTS_%i "
-  notify: 
-    - restart snapclient@left
-    - restart snapclient@right
-  
 - name: force systemd to reread configs
   systemd:
     daemon_reload: yes
@@ -72,7 +61,7 @@
   set_fact:
     side: "left"
 
-- name: "copy volume-'{{side}}'.sh"
+- name: "copy volume-{{side}}.sh"
   template:
     src: "templates/volume-side.sh"
     dest: "/usr/local/bin/volume-{{side}}.sh"
@@ -90,7 +79,7 @@
   set_fact:
     side: "right"
 
-- name: "copy volume-'{{side}}'.sh"
+- name: "copy volume-{{side}}.sh"
   template:
     src: "templates/volume-side.sh"
     dest: "/usr/local/bin/volume-{{side}}.sh"

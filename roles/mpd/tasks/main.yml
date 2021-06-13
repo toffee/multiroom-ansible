@@ -43,15 +43,3 @@
 - name: force systemd to reread configs
   systemd:
     daemon_reload: yes
-    
-- name: Start service mpd-@left
-  systemd:
-    name: mpd-@left
-    state: started
-    enabled: yes
-    
-- name: Start service mpd-@right
-  systemd:
-    name: mpd-@right
-    state: started
-    enabled: yes

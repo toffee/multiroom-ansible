@@ -12,7 +12,9 @@
         msg: 
           - "snapserver host:       {{snapserver_host}}"
           - "snapserver port:       {{snapserver_port}}"
-          - "snapclient left opt:   {{snapclient_left_opts}}"  
+          - "alsa mixer:            {{alsa_mixer}}"
+          - "snapclient left opt:   {{snapclient_left_opts}}"
+          - "snapclient right opt:  {{snapclient_right_opts}}"
       tags: always 
 
   roles:
