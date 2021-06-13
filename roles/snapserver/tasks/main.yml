@@ -1,0 +1,17 @@
+- name: install snapserver
+  apt:
+    deb: "https://github.com/badaix/snapcast/releases/download/v0.25.0/snapserver_0.25.0-1_armhf.deb"
+
+- name: modify snapserver sources
+  lineinfile:
+    path: "/etc/snapserver.conf"
+    insertafter: "^# meta: meta:"
+    line: "source = pipe:///tmp/snapfifoleft?name=Source-MPD-Left"
+  notify: restart snapserver
+  
+- name: modify snapserver sources
+  lineinfile:
+    path: "/etc/snapserver.conf"
+    insertafter: "^# meta: meta:"
+    line: "source = pipe:///tmp/snapfiforight?name=Source-MPD-Right"
+  notify: restart snapserver

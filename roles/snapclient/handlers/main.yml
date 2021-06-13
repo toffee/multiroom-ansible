@@ -1,0 +1,10 @@
+---
+- name: restart snapclient@left
+  service:
+    name: snapclient@left
+    state: restarted
+
+- name: restart snapclient@right
+  service:
+    name: snapclient@right
+    state: restarted

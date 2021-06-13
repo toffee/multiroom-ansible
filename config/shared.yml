@@ -1,0 +1,8 @@
+snapserver_host:        "127.0.0.1"
+snapserver_port:        "1704"
+
+snapclient_left_opts:   "--host {{snapserver_host}} --port {{snapserver_port}} --instance 1 --hostID Left --soundcard left --player alsa --mixer script:/usr/local/bin/volume-left.sh"
+snapclient_right_opts:  "--host {{snapserver_host}} --port {{snapserver_port}} --instance 2 --hostID Right --soundcard right --player alsa --mixer script:/usr/local/bin/volume-right.sh"
+
+alsa_mixer:             "Digital"
+

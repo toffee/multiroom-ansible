@@ -1,0 +1,57 @@
+---
+- name: "copy mpd service file"
+  template:
+    src: "templates/mpd-@.service"
+    dest: "/lib/systemd/system/mpd-@.service"
+    owner: root
+    group: root
+    mode: 0644
+  notify:
+    - restart mpd-@left
+    - restart mpd-@right
+    
+- name: define variable left
+  set_fact:
+    side: "left"
+    mpd_port: "6601"
+
+- name: "copy mpd config '{{side}}'"
+  template:
+    src: "templates/mpd.conf"
+    dest: "/etc/mpd-{{side}}.conf"
+    owner: mpd
+    group: audio
+    mode: 0666
+  notify:
+    - restart mpd-@{{side}}
+ 
+- name: define variable right
+  set_fact:
+    side: "right"
+    mpd_port: "6602"
+
+- name: "copy mpd config '{{side}}'"
+  template:
+    src: "templates/mpd.conf"
+    dest: "/etc/mpd-{{side}}.conf"
+    owner: mpd
+    group: audio
+    mode: 0666
+  notify:
+    - restart mpd-@{{side}}
+    
+- name: force systemd to reread configs
+  systemd:
+    daemon_reload: yes
+    
+- name: Start service mpd-@left
+  systemd:
+    name: mpd-@left
+    state: started
+    enabled: yes
+    
+- name: Start service mpd-@right
+  systemd:
+    name: mpd-@right
+    state: started
+    enabled: yes

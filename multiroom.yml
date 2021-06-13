@@ -1,0 +1,22 @@
+- hosts: all
+  become: true
+
+  pre_tasks:
+    # load shared variables
+    - name: load shared vars
+      include_vars: "config/shared.yml"
+      tags: always 
+  
+    - name: loaded values from config files
+      debug:
+        msg: 
+          - "snapserver host:       {{snapserver_host}}"
+          - "snapserver port:       {{snapserver_port}}"
+          - "snapclient left opt:   {{snapclient_left_opts}}"  
+      tags: always 
+
+  roles:
+    - alsa
+    - snapserver
+    - snapclient
+    - mpd
