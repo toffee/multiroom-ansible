@@ -39,7 +39,15 @@
     mode: 0666
   notify:
     - restart mpd-@{{side}}
-    
+
+- name: "copy playlist with radios from Romania"
+  template:
+    src: "templates/Radio-Romania.m3u"
+    dest: "/var/lib/mpd/playlists"
+    owner: mpd
+    group: audio
+    mode: 0666
+
 - name: force systemd to reread configs
   systemd:
     daemon_reload: yes

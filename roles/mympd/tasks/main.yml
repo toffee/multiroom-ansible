@@ -1,0 +1,91 @@
+---
+- name: install required packages
+  apt:
+    deb: https://download.opensuse.org/repositories/home:/jcorporation/Raspbian_10/armhf/mympd_8.0.4-1_armhf.deb
+
+- name: "copy mympd service file"
+  template:
+    src: "templates/mympd-@.service"
+    dest: "/lib/systemd/system/mympd-@.service"
+    owner: root
+    group: root
+    mode: 0644
+  notify:
+    - restart mympd-@left
+    - restart mympd-@right
+    
+- name: force systemd to reread configs
+  systemd:
+    daemon_reload: yes
+
+- name: define variable left
+  set_fact:
+    side: "left"
+    http_port: "6681"
+    ssl_port: "6691"
+    mpd_host: "127.0.0.1"
+    mpd_port: "6601"
+
+- name: "create working directory '{{side}}'"
+  file:
+    path: "/var/lib/mympd-{{side}}/{{item.path}}"
+    state: directory
+    owner: mympd
+    group: mympd
+    mode: '0755'
+  with_filetree: "templates/workingdir/"
+  when: item.state == 'directory'
+
+- name: "copy mympd workingdir '{{side}}'"
+  template:
+    src: "{{item.src}}"
+    dest: "/var/lib/mympd-{{side}}/{{item.path}}"
+    owner: mympd
+    group: mympd
+    mode: 0755
+  with_filetree: "templates/workingdir/"
+  when: item.state == 'file'
+  notify:
+    - restart mympd-@{{side}}
+
+- name: Start service mympd-@{{side}}
+  systemd:
+    name: mympd-@{{side}}
+    state: started
+    enabled: yes 
+
+- name: define variable right
+  set_fact:
+    side: "right"
+    http_port: "6682"
+    ssl_port: "6692"
+    mpd_host: "127.0.0.1"
+    mpd_port: "6602"
+
+- name: "create working directory '{{side}}'"
+  file:
+    path: "/var/lib/mympd-{{side}}/{{item.path}}"
+    state: directory
+    owner: mympd
+    group: mympd
+    mode: '0755'
+  with_filetree: "templates/workingdir/"
+  when: item.state == 'directory'
+
+- name: "copy mympd workingdir '{{side}}'"
+  template:
+    src: "{{item.src}}"
+    dest: "/var/lib/mympd-{{side}}/{{item.path}}"
+    owner: mympd
+    group: mympd
+    mode: 0755
+  with_filetree: "templates/workingdir/"
+  when: item.state == 'file'
+  notify:
+    - restart mympd-@{{side}}
+
+- name: Start service mympd-@{{side}}
+  systemd:
+    name: mympd-@{{side}}
+    state: started
+    enabled: yes 

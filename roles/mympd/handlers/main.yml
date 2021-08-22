@@ -1,0 +1,10 @@
+---
+- name: restart mympd-@left
+  service:
+    name: mympd-@left
+    state: restarted
+
+- name: restart mympd-@right
+  service:
+    name: mympd-@right
+    state: restarted

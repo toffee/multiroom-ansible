@@ -1,0 +1,730 @@
+#EXTM3U
+#RADIOBROWSERUUID:960e71a1-0601-11e8-ae97-52543be04c81
+#EXTINF:1,Radio Romania Actualități
+http://89.238.227.6:8006/;
+
+#RADIOBROWSERUUID:961d41f3-0601-11e8-ae97-52543be04c81
+#EXTINF:1,Europa FM
+http://astreaming.europafm.ro:8000/europafm_aacp48k
+
+#RADIOBROWSERUUID:960e6d01-0601-11e8-ae97-52543be04c81
+#EXTINF:1,Magic FM
+http://live.magicfm.ro:9128/magicfm.aacp
+
+#RADIOBROWSERUUID:9641c132-0601-11e8-ae97-52543be04c81
+#EXTINF:1,Radio Manele FM
+http://a.fmradiomanele.ro:8054/;
+
+#RADIOBROWSERUUID:f65094f5-2cae-4d4e-ab4a-12f2e7d274bb
+#EXTINF:1,Deep House Radio - Bucharest Romania
+http://live.dancemusic.ro:7000/listen.pls?sid=1
+
+#RADIOBROWSERUUID:9618e0b5-0601-11e8-ae97-52543be04c81
+#EXTINF:1,DIGI FM
+http://edge76.rdsnet.ro:84/digifm/digifm.mp3
+
+#RADIOBROWSERUUID:963f116c-0601-11e8-ae97-52543be04c81
+#EXTINF:1,Play Radio 90's
+http://live.playradio.org:9090/Play90HD.aacp
+
+#RADIOBROWSERUUID:99ac4423-0307-11ea-bbf2-52543be04c81
+#EXTINF:1,Kiss Fm Ro
+https://www.kissfm.ro/listen.pls
+
+#RADIOBROWSERUUID:960ee76f-0601-11e8-ae97-52543be04c81
+#EXTINF:1,Pro FM
+http://edge126.rdsnet.ro:84/profm/profm.mp3
+
+#RADIOBROWSERUUID:961ae516-0601-11e8-ae97-52543be04c81
+#EXTINF:1,Radio Guerrilla
+http://live.guerrillaradio.ro:8010/guerrilla.aac
+
+#EXTM3U
+#RADIOBROWSERUUID:9618ea0c-0601-11e8-ae97-52543be04c81
+#EXTINF:1,Dance FM 89.5 Bucharest
+http://edge126.rdsnet.ro:84/profm/dancefm.mp3
+
+#RADIOBROWSERUUID:878813b1-1b2d-11ea-a620-52543be04c81
+#EXTINF:1,Rock FM Romania
+http://live.rockfm.ro:9128/rockfm.aacp
+
+#RADIOBROWSERUUID:e50e0be3-5a2c-11ea-be63-52543be04c81
+#EXTINF:1,Realitatea FM
+http://195.42.138.43/liveaudio/liveaudio.stream/playlist.m3u8
+
+#RADIOBROWSERUUID:9617c8bf-0601-11e8-ae97-52543be04c81
+#EXTINF:1,Radio România Muzical
+http://stream2.srr.ro:8022/
+
+#RADIOBROWSERUUID:7912ccbd-e75d-425c-85b9-0b2ac2a4b213
+#EXTINF:1,Radio ZU
+https://live7digi.antenaplay.ro/radiozu/radiozu-48000.m3u8
+
+#RADIOBROWSERUUID:961326aa-0601-11e8-ae97-52543be04c81
+#EXTINF:1,Radio Trinitas
+http://81.196.25.70:8000/
+
+#RADIOBROWSERUUID:961b6ef1-0601-11e8-ae97-52543be04c81
+#EXTINF:1,Radio România Cultural
+http://stream2.srr.ro:8012/
+
+#RADIOBROWSERUUID:02bac4f2-73f8-11e9-af37-52543be04c81
+#EXTINF:1,ONEFM
+http://live.onefm.ro:9128/onefm.aacp
+
+#RADIOBROWSERUUID:9631c20d-0601-11e8-ae97-52543be04c81
+#EXTINF:1,Radio Clasic Beethoven
+http://37.251.146.169:7200/stream
+
+#RADIOBROWSERUUID:9631b7c6-0601-11e8-ae97-52543be04c81
+#EXTINF:1,Radio Clasic Mozart
+http://37.251.146.169:8300/stream
+
+#EXTM3U
+#RADIOBROWSERUUID:9618ea0c-0601-11e8-ae97-52543be04c81
+#EXTINF:1,Dance FM 89.5 Bucharest
+http://edge126.rdsnet.ro:84/profm/dancefm.mp3
+
+#RADIOBROWSERUUID:878813b1-1b2d-11ea-a620-52543be04c81
+#EXTINF:1,Rock FM Romania
+http://live.rockfm.ro:9128/rockfm.aacp
+
+#RADIOBROWSERUUID:e50e0be3-5a2c-11ea-be63-52543be04c81
+#EXTINF:1,Realitatea FM
+http://195.42.138.43/liveaudio/liveaudio.stream/playlist.m3u8
+
+#RADIOBROWSERUUID:9617c8bf-0601-11e8-ae97-52543be04c81
+#EXTINF:1,Radio România Muzical
+http://stream2.srr.ro:8022/
+
+#RADIOBROWSERUUID:7912ccbd-e75d-425c-85b9-0b2ac2a4b213
+#EXTINF:1,Radio ZU
+https://live7digi.antenaplay.ro/radiozu/radiozu-48000.m3u8
+
+#RADIOBROWSERUUID:961326aa-0601-11e8-ae97-52543be04c81
+#EXTINF:1,Radio Trinitas
+http://81.196.25.70:8000/
+
+#RADIOBROWSERUUID:961b6ef1-0601-11e8-ae97-52543be04c81
+#EXTINF:1,Radio România Cultural
+http://stream2.srr.ro:8012/
+
+#RADIOBROWSERUUID:02bac4f2-73f8-11e9-af37-52543be04c81
+#EXTINF:1,ONEFM
+http://live.onefm.ro:9128/onefm.aacp
+
+#RADIOBROWSERUUID:9631c20d-0601-11e8-ae97-52543be04c81
+#EXTINF:1,Radio Clasic Beethoven
+http://37.251.146.169:7200/stream
+
+#RADIOBROWSERUUID:9631b7c6-0601-11e8-ae97-52543be04c81
+#EXTINF:1,Radio Clasic Mozart
+http://37.251.146.169:8300/stream
+
+#EXTM3U
+#RADIOBROWSERUUID:960e70d8-0601-11e8-ae97-52543be04c81
+#EXTINF:1,Radio Bucuresti FM
+http://89.238.227.6:8032/;stream/1
+
+#RADIOBROWSERUUID:964ad68e-0601-11e8-ae97-52543be04c81
+#EXTINF:1,Gherla FM
+http://89.39.189.52:8000/;
+
+#RADIOBROWSERUUID:960e8eb0-0601-11e8-ae97-52543be04c81
+#EXTINF:1,Antena satelor
+http://89.238.227.6:8042/
+
+#RADIOBROWSERUUID:72974f07-2417-11ea-aa0c-52543be04c81
+#EXTINF:1,Radio GMusic Soft'n'lazy
+http://188.165.212.154:8040/stream
+
+#RADIOBROWSERUUID:91f5bcf5-896b-46ca-afae-7c767b7ce0e2
+#EXTINF:1,Smart FM
+http://live.smartradio.ro:9128/live
+
+#RADIOBROWSERUUID:657b16c9-f566-11e9-bbf2-52543be04c81
+#EXTINF:1,Impuls Radio
+http://live2.radio-impuls.ro/
+
+#RADIOBROWSERUUID:ab8b99eb-c680-11e8-a498-52543be04c81
+#EXTINF:1,Radio Popular
+http://livemp3.radiopopular.ro:7777/;stream.mp3
+
+#RADIOBROWSERUUID:028e9aba-b768-11e8-aaf2-52543be04c81
+#EXTINF:1,Radio 1 Manele
+http://radio1manele.no-ip.org:8000/listen.pls?sid=1&title=RADIO%2
+
+#RADIOBROWSERUUID:eac07293-c67d-11e8-a498-52543be04c81
+#EXTINF:1,Lautaru Populara
+http://live.radiolautaru.ro:9000/;stream.nsv
+
+#RADIOBROWSERUUID:70d48cfd-eedd-400a-8b7a-881e7015fc3f
+#EXTINF:1,Radio Zu
+http://zuicast.digitalag.ro:9420/zu
+
+#EXTM3U
+#RADIOBROWSERUUID:9631befa-0601-11e8-ae97-52543be04c81
+#EXTINF:1,Radio Clasic 100% Romanesc
+http://37.251.146.169:8204/stream
+
+#RADIOBROWSERUUID:9631c6f2-0601-11e8-ae97-52543be04c81
+#EXTINF:1,Radio Clasic Kids
+http://37.251.146.169:7600/stream
+
+#RADIOBROWSERUUID:b3b8de23-2fd3-4e4c-b790-19c7eca713d8
+#EXTINF:1,eteatru
+http://stream2.srr.ro:8078/eteatru.mp3
+
+#RADIOBROWSERUUID:9615bc71-0601-11e8-ae97-52543be04c81
+#EXTINF:1,Focus FM
+http://live.focusfm.ro:8000/focusfmhigh.ogg.m3u
+
+#RADIOBROWSERUUID:3c8c5bcb-feaa-11e8-a1be-52543be04c81
+#EXTINF:1,RADIO ROMANCE 21.ROMANIA
+http://live.radioromance21.ro:9950/
+
+#RADIOBROWSERUUID:9a0379a7-b24a-4415-9f10-0d8e8d7e1695
+#EXTINF:1,Radio Clasic Bach
+http://www.clasicradio.ro:9100/stream
+
+#RADIOBROWSERUUID:5e0d918f-c682-11e8-a498-52543be04c81
+#EXTINF:1,Doina
+http://89.43.138.116:8000/radiodoina.mp3
+
+#RADIOBROWSERUUID:fca47fd7-936a-11e9-a605-52543be04c81
+#EXTINF:1,ClubMix
+http://live.radioclubmix.ro:9999/
+
+#RADIOBROWSERUUID:961a0e1c-0601-11e8-ae97-52543be04c81
+#EXTINF:1,Radio Antena Braşovului
+http://streaming.radiomures.ro:8302/listen.pls
+
+#RADIOBROWSERUUID:960a0966-0601-11e8-ae97-52543be04c81
+#EXTINF:1,Marosvásárhelyi Rádió
+http://streaming.radiomures.ro:8312/;stream.nsv&type=mp3
+
+#EXTM3U
+#RADIOBROWSERUUID:960eeb85-0601-11e8-ae97-52543be04c81
+#EXTINF:1,Radio Timișoara
+http://89.238.227.6:8354/
+
+#RADIOBROWSERUUID:ecc988d8-94ff-11e8-a767-52543be04c81
+#EXTINF:1,Dark Edge Radio
+http://stream.darkedge.ro:8000/
+
+#RADIOBROWSERUUID:84571856-e098-40b6-97c8-dd0ce6334cba
+#EXTINF:1,Bitter Sweet Music
+https://sonicssl.namehost.ro/8520/stream
+
+#RADIOBROWSERUUID:961be972-0601-11e8-ae97-52543be04c81
+#EXTINF:1,Impact FM
+http://109.166.241.233:8500/
+
+#RADIOBROWSERUUID:6d1e1d4c-a321-11e9-a787-52543be04c81
+#EXTINF:1,RFI Romania
+http://asculta.rfi.ro:9128/live.aac
+
+#RADIOBROWSERUUID:c8cbb571-a6fc-11e9-a787-52543be04c81
+#EXTINF:1,Radio Vacanta
+http://89.238.227.6:8330/listen.pls
+
+#RADIOBROWSERUUID:d7d38714-a178-441d-bc6b-64e275ec42a6
+#EXTINF:1,90s 3NeRgY&ReMiX
+http://s11.ssl-stream.com:8084/live
+
+#RADIOBROWSERUUID:edf8fc0e-c67e-11e8-a498-52543be04c81
+#EXTINF:1,Traditional - Muzica Populara
+http://populara.radiotraditional.ro:7600/;stream.nsv
+
+#RADIOBROWSERUUID:b6a8f1e5-2416-11ea-aa0c-52543be04c81
+#EXTINF:1,Radio GMusic Retro
+http://188.165.212.154:8020/stream
+
+#RADIOBROWSERUUID:f975bd11-0725-4bdc-9e1a-754c7c7517bb
+#EXTINF:1,Radio Domeldo Movie
+http://cast5.servcast.net:3006/stream
+
+#EXTM3U
+#RADIOBROWSERUUID:fab8979f-a08c-11e9-a787-52543be04c81
+#EXTINF:1,Radio Nebunya
+http://asculta.radionebunya.ro:7575/
+
+#RADIOBROWSERUUID:963403eb-0601-11e8-ae97-52543be04c81
+#EXTINF:1,Plusz FM
+http://hosting2.42netmedia.com:8961/stream
+
+#RADIOBROWSERUUID:963e5c72-0601-11e8-ae97-52543be04c81
+#EXTINF:1,Radio Transilvania Oradea
+http://92.61.114.191:9720/;
+
+#RADIOBROWSERUUID:c8942145-15bc-11e8-ae97-52543be04c81
+#EXTINF:1,Radio Tananana
+http://www.tananana.ro/assets/playlists/TANANANA.m3u
+
+#RADIOBROWSERUUID:961acccd-0601-11e8-ae97-52543be04c81
+#EXTINF:1,Virgin Radio Romania
+http://virginradio.ro/VirginRadioRomania-live.m3u
+
+#RADIOBROWSERUUID:31253a8c-9af7-459f-92f6-595aaa3fa0a9
+#EXTINF:1,Radio Best Romantic
+http://best.romantic.radi0.im:8877/stream
+
+#RADIOBROWSERUUID:9be4202e-f256-11e8-a471-52543be04c81
+#EXTINF:1,Radio 7 Bucuresti Romania
+http://80.86.106.32:8000/radio7.mp3
+
+#RADIOBROWSERUUID:54b05a6e-d8a5-11e9-a861-52543be04c81
+#EXTINF:1,Vibe FM 92.1
+http://astreaming.europafm.ro:8000/vibefm_mp3_64k
+
+#RADIOBROWSERUUID:b480598f-2146-11e8-a334-52543be04c81
+#EXTINF:1,Radio Fibra Romania
+http://188.165.152.44:9000/
+
+#RADIOBROWSERUUID:9631c089-0601-11e8-ae97-52543be04c81
+#EXTINF:1,Radio Clasic Hits
+http://37.251.146.169:7000/stream
+
+#EXTM3U
+#RADIOBROWSERUUID:54b05a6e-d8a5-11e9-a861-52543be04c81
+#EXTINF:1,Vibe FM 92.1
+http://astreaming.europafm.ro:8000/vibefm_mp3_64k
+
+#RADIOBROWSERUUID:9be4202e-f256-11e8-a471-52543be04c81
+#EXTINF:1,Radio 7 Bucuresti Romania
+http://80.86.106.32:8000/radio7.mp3
+
+#RADIOBROWSERUUID:9631c089-0601-11e8-ae97-52543be04c81
+#EXTINF:1,Radio Clasic Hits
+http://37.251.146.169:7000/stream
+
+#RADIOBROWSERUUID:253b8568-121d-11ea-a87e-52543be04c81
+#EXTINF:1,autobazaradio
+http://s3.myradiostream.com:7022/
+
+#RADIOBROWSERUUID:96306027-0601-11e8-ae97-52543be04c81
+#EXTINF:1,Radio Clasic Opera
+http://37.251.146.169:7500/stream
+
+#RADIOBROWSERUUID:60c88358-1987-4cd4-b8d5-185326bdd9e0
+#EXTINF:1,RADIO PRO PARTY
+http://asculta.proparty.net:8567/stream
+
+#RADIOBROWSERUUID:42dca958-e8c8-42e7-8c44-aa71ca8b3f59
+#EXTINF:1,Radio România Cultural
+http://stream2.srr.ro:8016/
+
+#RADIOBROWSERUUID:8398d277-4e57-403d-8e44-f54d873ec482
+#EXTINF:1,Radio Impuls
+http://stream.radio-impuls.ro/stream.mp3
+
+#RADIOBROWSERUUID:961d6436-0601-11e8-ae97-52543be04c81
+#EXTINF:1,Napoca FM 102.2
+http://89.45.196.210/
+
+#RADIOBROWSERUUID:960e64bd-0601-11e8-ae97-52543be04c81
+#EXTINF:1,Rádió GaGa - Marosvásárhely
+http://rc.radiogaga.ro:8000/mp3-256.m3u
+
+#EXTM3U
+#RADIOBROWSERUUID:9631c89c-0601-11e8-ae97-52543be04c81
+#EXTINF:1,Radio Clasic Jazz
+http://37.251.146.169:7800/stream
+
+#RADIOBROWSERUUID:b95a38cd-9a3c-11e8-a767-52543be04c81
+#EXTINF:1,Radio liberty slagare
+http://slagare.radioliberty.ro:1989/
+
+#RADIOBROWSERUUID:4a09517b-d073-11e8-a54a-52543be04c81
+#EXTINF:1,MusicFM
+http://edge126.rdsnet.ro:84/profm/music-fm.mp3
+
+#RADIOBROWSERUUID:5480ee3b-5bb4-11e9-a622-52543be04c81
+#EXTINF:1,Radio România Târgu Mureș - Marosvásárhelyi Rádió Románia
+http://streaming.radiomures.ro:8312/listen.pls?sid=1
+
+#RADIOBROWSERUUID:17d22fdd-f566-11e9-bbf2-52543be04c81
+#EXTINF:1,Chill FM Romania
+http://edge126.rdsnet.ro:84/profm/chillfm.mp3
+
+#RADIOBROWSERUUID:2edb15f2-59b6-11ea-be63-52543be04c81
+#EXTINF:1,Radio Transilvania - Cluj Napoca
+http://stream-rt.davacloud.ro:8000/Cluj.mp3
+
+#RADIOBROWSERUUID:d7e2cfbb-d145-49e8-931b-64f1d427c65e
+#EXTINF:1,Romantic FM
+https://live1ag.antenaplay.ro/radioromantic/radioromantic-48000.m3u8
+
+#RADIOBROWSERUUID:e90b58ac-7976-427d-b5c3-bcccdae1cc7d
+#EXTINF:1,Nationa FM
+http://www.nationalfm.ro/assets/national-fm.pls
+
+#RADIOBROWSERUUID:8398d277-4e57-403d-8e44-f54d873ec482
+#EXTINF:1,Radio Impuls
+http://stream.radio-impuls.ro/stream.mp3
+
+#RADIOBROWSERUUID:42dca958-e8c8-42e7-8c44-aa71ca8b3f59
+#EXTINF:1,Radio România Cultural
+http://stream2.srr.ro:8016/
+
+#EXTM3U
+#RADIOBROWSERUUID:de835f1c-ba24-488f-8d70-28a94ce22315
+#EXTINF:1,Radio Nova22
+http://s2.myradiostream.com:4520/listen.m4a
+
+#RADIOBROWSERUUID:962905de-0601-11e8-ae97-52543be04c81
+#EXTINF:1,Mária Rádió Erdély
+http://stream.mariaradio.ro:8000/MRE.m3u
+
+#RADIOBROWSERUUID:9626ef4b-0601-11e8-ae97-52543be04c81
+#EXTINF:1,Radio Clasic Rock
+http://37.251.146.169:7100/stream
+
+#RADIOBROWSERUUID:9631c56f-0601-11e8-ae97-52543be04c81
+#EXTINF:1,Radio Clasic Strauss
+http://37.251.146.169:8100/stream
+
+#RADIOBROWSERUUID:962f5133-0601-11e8-ae97-52543be04c81
+#EXTINF:1,Radio Clasic Hits Plus
+http://37.251.146.169:8008/stream
+
+#RADIOBROWSERUUID:9618afd2-0601-11e8-ae97-52543be04c81
+#EXTINF:1,Radio Clasic Romania - HD Stream
+http://37.251.146.169:8000/streamHD
+
+#RADIOBROWSERUUID:964e4ed8-0601-11e8-ae97-52543be04c81
+#EXTINF:1,Radio Condor Bucharest
+http://www.radiocondor.ro:6303/
+
+#RADIOBROWSERUUID:96347e87-0601-11e8-ae97-52543be04c81
+#EXTINF:1,FavoriteFM
+http://media.xseu.net/FavoriteFM
+
+#RADIOBROWSERUUID:b2f994ba-6a49-11e8-b15b-52543be04c81
+#EXTINF:1,Szépvíz Rádió
+http://stream.szepvizradio.info:8000/stream#.mp3
+
+#RADIOBROWSERUUID:07b37902-220d-11e9-a80b-52543be04c81
+#EXTINF:1,Radio Sound FouYou
+http://radio-soundfouryou.radi0.im:8000/stream
+
+#EXTM3U
+#RADIOBROWSERUUID:58644702-5f3e-11e9-a622-52543be04c81
+#EXTINF:1,gofm.ro
+http://live.gofm.ro:9128/
+
+#RADIOBROWSERUUID:1bf64abf-7a64-11e9-aa30-52543be04c81
+#EXTINF:1,Napoca FM
+http://live.napocafm.ro/stream/1/
+
+#RADIOBROWSERUUID:fec18320-aab9-11e9-88f4-52543be04c81
+#EXTINF:1,Radio EtnoVest
+http://89.39.189.75:8500/listen.pls
+
+#RADIOBROWSERUUID:15d9bfdc-05dc-44c5-bc52-74d3e7e1c8f6
+#EXTINF:1,goLOUNGE
+http://fr1.streamhosting.ch/lounge128.mp3
+
+#RADIOBROWSERUUID:eee768fa-3842-4bda-91e5-beb72396a5c1
+#EXTINF:1,Metronom FM
+http://86.123.134.70:8000/metronom
+
+#RADIOBROWSERUUID:90a20e4f-a42a-44e1-bd75-5c7e84bf3d3b
+#EXTINF:1,Radio DJ ONE
+http://str2b.openstream.co/1620
+
+#RADIOBROWSERUUID:3ab00dd1-e787-4664-b557-08c085e55eec
+#EXTINF:1,Radio România Muzical
+http://stream2.srr.ro:8026/
+
+#RADIOBROWSERUUID:f7c3e272-6632-46e8-a3ae-9265f94af020
+#EXTINF:1,Radio 3Net
+http://media.3netmedia.ro:8000/Live128.m3u
+
+#RADIOBROWSERUUID:e118e67d-ddbc-48ef-ab98-b60435339a4a
+#EXTINF:1,RADIO MIRAJUL MUZICII
+http://live.radiomiraj.ro:9952/stream
+
+#RADIOBROWSERUUID:48d28f42-1f33-46e1-979e-f0f10eac7213
+#EXTINF:1,Radio247fm Dance
+http://dance.radio247international.com:9802/
+
+#EXTM3U
+#RADIOBROWSERUUID:96194ab6-0601-11e8-ae97-52543be04c81
+#EXTINF:1,Radio România Iași
+http://89.238.227.6:8202/listen.pls
+
+#RADIOBROWSERUUID:961d665b-0601-11e8-ae97-52543be04c81
+#EXTINF:1,Radio România Cluj
+http://89.238.227.6:8384/
+
+#RADIOBROWSERUUID:961ffe89-0601-11e8-ae97-52543be04c81
+#EXTINF:1,Radio Maria
+http://cloudrad.io/radiomariaromania/listen.pls
+
+#RADIOBROWSERUUID:9624f04a-0601-11e8-ae97-52543be04c81
+#EXTINF:1,West City Radio
+http://live.westcityradio.ro:8000/mp3
+
+#RADIOBROWSERUUID:9644d860-0601-11e8-ae97-52543be04c81
+#EXTINF:1,Radio Romania International
+http://stream2.srr.ro:8052/;
+
+#RADIOBROWSERUUID:964c313e-0601-11e8-ae97-52543be04c81
+#EXTINF:1,Kolozsvári Rádió
+http://89.238.227.6:8386/listen.pls
+
+#RADIOBROWSERUUID:96104fdf-0601-11e8-ae97-52543be04c81
+#EXTINF:1,LOUDCITY.fm
+https://streaming.radio.co/s35a075169/listen
+
+#RADIOBROWSERUUID:964e65cb-0601-11e8-ae97-52543be04c81
+#EXTINF:1,Radio Crisami
+http://crisami.zapto.org:8130/
+
+#RADIOBROWSERUUID:24fefecf-9324-11e8-a767-52543be04c81
+#EXTINF:1,Radio Medias
+http://mediasfm.eushells.ro:8082/listen.pls
+
+#RADIOBROWSERUUID:ae06af89-5a24-11e9-a622-52543be04c81
+#EXTINF:1,RADIO MARIA ROMANIA HUNG.
+http://dreamsiteradiocp4.com:8026/stream
+
+#EXTM3U
+#RADIOBROWSERUUID:eaf0c25f-6445-11e9-a622-52543be04c81
+#EXTINF:1,Radio Vocea Sperantei
+http://rvs.crestin.tv:8006/play
+
+#RADIOBROWSERUUID:11343153-7001-11e9-af37-52543be04c81
+#EXTINF:1,autobazaradio
+http://s3.myradiostream.com:7022/listen.m4a
+
+#RADIOBROWSERUUID:14d2402a-9be5-11e9-a787-52543be04c81
+#EXTINF:1,Radio România Internațional 2
+https://www.rri.ro/live_stream/rri_mp3_128_2.m3u
+
+#RADIOBROWSERUUID:668b50b7-a805-11e9-88f4-52543be04c81
+#EXTINF:1,RockTV
+https://fms-https1.mediadirect.ro/live3/_definst_/rocktv.smil/playlist.m3u8?publisher=83
+
+#RADIOBROWSERUUID:fabaad27-a562-11e9-a787-52543be04c81
+#EXTINF:1,Radio Transilvania Satu Mare
+http://stream-rt.davacloud.ro:8000/SatuMare.mp3
+
+#RADIOBROWSERUUID:d8b624b1-e5d7-11e9-a96c-52543be04c81
+#EXTINF:1,Radio HIT Iasi
+http://live02.radiohit.ro:8000/hit.mp3
+
+#RADIOBROWSERUUID:e22dc75a-f902-11e9-bbf2-52543be04c81
+#EXTINF:1,Radio Resita
+http://89.238.227.6:8344/listen.pls
+
+#RADIOBROWSERUUID:07aa77b3-5a03-11ea-be63-52543be04c81
+#EXTINF:1,Radio Sky FM
+http://89.43.138.116:8000/radiosky.mp3
+
+#RADIOBROWSERUUID:54bb1ef5-69e6-11ea-b1cf-52543be04c81
+#EXTINF:1,Radio Phantom
+http://163.172.7.166:8232/;
+
+#RADIOBROWSERUUID:0ff7e083-b3ba-4e03-a8a0-7fa861ed2c7c
+#EXTINF:1,Radio Vocea  Evangheliei Cluj
+http://rvecj.ro/wp-content/uploads/external-sources/playlist.asx
+
+#EXTM3U
+#RADIOBROWSERUUID:5bc6c738-572c-49f1-8ec4-a2a59d8069e1
+#EXTINF:1,FrissFM
+http://live.frissfm.ro:8000/frissfm
+
+#RADIOBROWSERUUID:99d3bb67-04ef-44c3-a2a3-998122746e45
+#EXTINF:1,Radio Noise
+http://live.radionoise.ro:9100/;
+
+#RADIOBROWSERUUID:d280637d-8b7e-11e9-ad01-52543be04c81
+#EXTINF:1,MDI FM
+http://www.mdifm.ro/listen_mdifm.pls
+
+#RADIOBROWSERUUID:28130233-a8e1-4195-8c6e-a22ab41f576a
+#EXTINF:1,Radio România Brașov
+http://stream2.srr.ro:8210/;
+
+#RADIOBROWSERUUID:21001f1a-e012-4bfd-884f-1029ab56e4f5
+#EXTINF:1,Radio Intens
+https://www.radiointens.ro/128.pls
+
+#RADIOBROWSERUUID:105c60c7-82cb-41e7-a814-51db9efcd461
+#EXTINF:1,RVE Suceava
+http://31.24.224.52:7014/stream
+
+#RADIOBROWSERUUID:96303ed5-0601-11e8-ae97-52543be04c81
+#EXTINF:1,Radio Clasic Romania
+http://37.251.146.169:8000/2
+
+#RADIOBROWSERUUID:964c376f-0601-11e8-ae97-52543be04c81
+#EXTINF:1,City Rádió
+http://live.city-radio.ro:8800/;
+
+#RADIOBROWSERUUID:321fd3c7-6b57-11e8-b15b-52543be04c81
+#EXTINF:1,Radio Filadelfia Romania (Calitate medie)
+http://asculta.radiofiladelfia.ro:8000/;
+
+#RADIOBROWSERUUID:64c2fc09-6b58-11e8-b15b-52543be04c81
+#EXTINF:1,Radio Filadelfia Romania (Calitate mica)
+http://asculta.radiofiladelfia.ro:8080/;
+
+#EXTM3U
+#RADIOBROWSERUUID:6857208b-6b56-11e8-b15b-52543be04c81
+#EXTINF:1,Radio Filadelfia Romania (Calitate excelenta)
+http://asculta.radiofiladelfia.ro:8088/;
+
+#RADIOBROWSERUUID:8487f8a7-9322-11e8-a767-52543be04c81
+#EXTINF:1,Radio Gold FM
+http://80.86.106.110:8002/listen.pls
+
+#RADIOBROWSERUUID:a035f172-9c76-11e8-a767-52543be04c81
+#EXTINF:1,Radio Sound For You
+http://89.39.189.89:8000/
+
+#RADIOBROWSERUUID:eff3993b-9322-11e8-a767-52543be04c81
+#EXTINF:1,Radio Romania Constanta
+http://89.238.227.6:8332/listen.pls?sid=1
+
+#RADIOBROWSERUUID:2201580c-c680-11e8-a498-52543be04c81
+#EXTINF:1,România Oltenia-Craiova
+http://stream2.srr.ro:8370/;stream.mp3
+
+#RADIOBROWSERUUID:4573c6e0-c681-11e8-a498-52543be04c81
+#EXTINF:1,Someș
+http://www.radiosomes.ro:8000/;
+
+#RADIOBROWSERUUID:9dde386d-c681-11e8-a498-52543be04c81
+#EXTINF:1,Medias fm
+http://mediasfm.eushells.ro:8082/;stream.nsv
+
+#RADIOBROWSERUUID:29ef5448-6995-11e9-af37-52543be04c81
+#EXTINF:1,RADIO MARIA ROMANIA
+http://dreamsiteradiocp2.com:8002/stream
+
+#RADIOBROWSERUUID:34a7d278-9be5-11e9-a787-52543be04c81
+#EXTINF:1,Radio România Internațional 3
+https://www.rri.ro/live_stream/rri_mp3_128_3.m3u
+
+#RADIOBROWSERUUID:bc1fe6b9-bade-11e9-acb2-52543be04c81
+#EXTINF:1,Régió Rádió
+https://live.regioradio.info/listen/
+
+#EXTM3U
+#RADIOBROWSERUUID:e1327ba8-cbb4-11e9-8502-52543be04c81
+#EXTINF:1,Radio Doxologia
+https://doxologia.ro/radio/radio_doxologia.pls
+
+#RADIOBROWSERUUID:6f2a42e5-5548-11ea-be63-52543be04c81
+#EXTINF:1,FunFM
+http://online.funfm.ro:8000/funfm.mp3
+
+#RADIOBROWSERUUID:d8752a6a-dd00-48ef-b2ac-9eed96171696
+#EXTINF:1,Retró Rádió Csíkszereda
+http://online.radioretro.ro:8002/RetroRadio.mp3
+
+#RADIOBROWSERUUID:74999fcb-3d89-46d1-b10a-1a919ee1a03c
+#EXTINF:1,Radio FIR
+http://89.36.154.36:8000/listen.mp3
+
+#RADIOBROWSERUUID:807f6a03-9f05-49fc-96f4-db7c5204cd79
+#EXTINF:1,Radio Trinitas
+http://live.radiotrinitas.ro:8000/
+
+#RADIOBROWSERUUID:248c5f67-995a-4614-91f0-ff84e7f1ba29
+#EXTINF:1,Radio Gosen
+http://ascultaradiogosen.no-ip.org:8125/listen.pls
+
+#RADIOBROWSERUUID:6a8c895a-a198-45e3-8e98-cbe1dcabfc5c
+#EXTINF:1,Radio Accent
+http://86.122.157.14:8900/
+
+#RADIOBROWSERUUID:f86e0d8a-7ec0-4460-a7c8-aeb265c76de7
+#EXTINF:1,Radio Vocea Evangheliei RVE Sibiu
+https://c13.radioboss.fm:18286/stream
+
+#RADIOBROWSERUUID:61894f8f-86a3-440a-b0a3-97bf2fe5f143
+#EXTINF:1,Erdély FM
+https://efm.radioca.st/stream
+
+#RADIOBROWSERUUID:9e7b0481-f12b-46b3-8a53-ab1a010235bb
+#EXTINF:1,90s 3NeRgY
+https://s11.ssl-stream.com/ssl/90s_energy?mp=/stream
+
+#EXTM3U
+#RADIOBROWSERUUID:ce4750fa-edc9-400d-9d37-42b34ca04f69
+#EXTINF:1,Sepsi Rádió
+https://stream.sepsiradio.ro:8001/SepsiRadio
+
+#RADIOBROWSERUUID:f629a802-e574-44c4-a31e-2e18be760229
+#EXTINF:1,Jurnal FM Romania
+https://securestreams.autopo.st:1139/
+
+#RADIOBROWSERUUID:cb4f1a04-3207-41e0-b48e-3c5c991787b5
+#EXTINF:1,ERCIS FM
+http://servidor18.brlogic.com:7534/live
+
+#RADIOBROWSERUUID:0e48f620-4720-472b-aa75-fa23199bbb90
+#EXTINF:1,Radio Romantik
+http://5.196.244.141:1966/stream
+
+#RADIOBROWSERUUID:21c55ce9-6aa5-4851-bc09-8582bd5e38a9
+#EXTINF:1,Radio ZU
+http://82.208.137.144:8004/listen.pls
+
+#RADIOBROWSERUUID:960c3e01-0601-11e8-ae97-52543be04c81
+#EXTINF:1,Vox FM - Székelykeresztúr
+http://stream.voxfm.ro:8000/listen.pls
+
+#RADIOBROWSERUUID:137be9e3-bae8-11e9-acb2-52543be04c81
+#EXTINF:1,Star Rádió
+http://live.starradio.ro:9000/;&type=mp3
+
+#RADIOBROWSERUUID:2d6ae1d8-baea-11e9-acb2-52543be04c81
+#EXTINF:1,Agnus Rádió
+http://radio2.tirek.hu:8000/agnusradio
+
+#RADIOBROWSERUUID:2ab0f5db-f677-11e9-bbf2-52543be04c81
+#EXTINF:1,Super FM
+https://live.superfm.ro/stream.mp3
+
+#RADIOBROWSERUUID:9a456348-f909-11e9-bbf2-52543be04c81
+#EXTINF:1,Social FM
+http://noasrv.caster.fm:10085/listen.m3u
+
+#EXTM3U
+#RADIOBROWSERUUID:984b6f74-113a-11ea-a87e-52543be04c81
+#EXTINF:1,Radio Romania Targu Mures
+http://streaming.radiomures.ro:8302/listen.pls;/stream
+
+#RADIOBROWSERUUID:806211c4-2d14-46ae-9fc5-fb4423f4a972
+#EXTINF:1,Civil Rádió
+http://213.164.242.44:8000/listen.pls
+
+#RADIOBROWSERUUID:6b1258ad-5ad9-4e1c-9a5e-f3f74f3fc698
+#EXTINF:1,Siculus Rádió Kézdivásárhely
+http://46.214.17.202:8000/radioac3
+
+#RADIOBROWSERUUID:cfc4a501-a46c-4595-a189-99e0bb261add
+#EXTINF:1,Radio Boom Vrancea
+http://89.38.8.133:8000/listen.pls
+
+#RADIOBROWSERUUID:30dd32b7-78c2-42d9-b52f-87615b17774e
+#EXTINF:1,Radio Maranata Vulcan
+http://noasrv.caster.fm:10185/stream
+
+#RADIOBROWSERUUID:31837cfd-7cb3-4a66-a1a7-dac2e0d6563b
+#EXTINF:1,Radio DOR Romania
+https://live7digi.antenaplay.ro/radiodor/radiodor-48000.m3u8
+
+#RADIOBROWSERUUID:20d4d9d2-399d-11ea-8dd7-52543be04c81
+#EXTINF:1,Alfa Omega TV
+https://5b6cade28002a.streamlock.net/alfaomega/smil:alfaomegatv/chunklist_w1793714522_b780800.m3u8
+
+#RADIOBROWSERUUID:63781c29-59b7-11ea-be63-52543be04c81
+#EXTINF:1,Sláger Rádió
+http://89.37.193.61:8000/raspi
+
