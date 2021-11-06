@@ -26,6 +26,10 @@
           - "snapclient left opt:   {{snapclient_left_opts}}"
           - "snapclient right opt:  {{snapclient_right_opts}}"
       tags: always 
+      
+    - name: set hostname
+      shell: 'hostnamectl set-hostname {{host_name}}'
+      changed_when: "ansible_hostname != host_name"
 
   roles:
     - role: alsa
