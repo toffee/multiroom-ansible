@@ -29,6 +29,7 @@
   systemd:
     name: snapclient
     state: stopped
+    enabled: no
 
 - name: check if original systemd unit file exists
   stat: path=/lib/systemd/system/snapclient.service
