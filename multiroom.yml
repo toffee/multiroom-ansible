@@ -6,10 +6,20 @@
     - name: load shared vars
       include_vars: "config/shared.yml"
       tags: always 
+      
+    - name: define variable moode
+      set_fact:
+        moode: "{{ (ansible_facts['eth0'].macaddress == macaddress_one) | ternary ('one', 'two') }}"
+        
+    - name: load specific vars
+      include_vars: "config/{{moode}}.yml"
+      tags: always 
   
     - name: loaded values from config files
       debug:
         msg: 
+          - "mac address:           {{ansible_facts['eth0'].macaddress}}"
+          - "moode:                 {{moode}}"
           - "snapserver host:       {{snapserver_host}}"
           - "snapserver port:       {{snapserver_port}}"
           - "alsa mixer:            {{alsa_mixer}}"
@@ -18,8 +28,11 @@
       tags: always 
 
   roles:
-    - alsa
-    - snapserver
-    - snapclient
-    - mpd
-    - mympd
+    - role: alsa
+    - role: snapserver
+      when: moode == 'one'
+    - role: snapclient
+    - role: mpd
+      when: moode == 'one'
+    - role: mympd
+      when: moode == 'one'
