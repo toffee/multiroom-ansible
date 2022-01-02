@@ -6,12 +6,19 @@
   lineinfile:
     path: "/etc/snapserver.conf"
     insertafter: "^# meta: meta:"
-    line: "source = pipe:///tmp/snapfifoleft?name=Source-MPD-Left"
+    line: "source = pipe:///tmp/snapfifoleft?name=Source-Library"
   notify: restart snapserver
   
 - name: modify snapserver sources
   lineinfile:
     path: "/etc/snapserver.conf"
     insertafter: "^# meta: meta:"
-    line: "source = pipe:///tmp/snapfiforight?name=Source-MPD-Right"
+    line: "source = pipe:///tmp/snapfiforight?name=Source-Radio"
   notify: restart snapserver
+
+- name: modify snapserver sources
+  lineinfile:
+    path: "/etc/snapserver.conf"
+    insertafter: "^# meta: meta:"
+    line: "source = airplay:///shairport-sync?name=Source-Airplay"
+  notify: restart snapserver 
