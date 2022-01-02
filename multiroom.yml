@@ -31,6 +31,20 @@
       shell: 'hostnamectl set-hostname {{host_name}}'
       changed_when: "ansible_hostname != host_name"
 
+    - name: Replace a localhost entry pointing to old hostname
+      lineinfile:
+        path: /etc/hosts
+        regexp: 'moode'
+        line: 127.0.0.1         {{host_name}}
+
+    - name: install additional packages
+      apt:
+        name: [
+          vim,
+          mc
+        ]
+        state: present 
+
   roles:
     - role: alsa
     - role: snapserver
