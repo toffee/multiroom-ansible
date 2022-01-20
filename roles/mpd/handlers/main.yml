@@ -1,10 +1,10 @@
 ---
-- name: restart mpd-@left
+- name: restart mpd-@library
   service:
-    name: mpd-@left
+    name: mpd-@library
     state: restarted
 
-- name: restart mpd-@right
+- name: restart mpd-@radio
   service:
-    name: mpd-@right
+    name: mpd-@radio
     state: restarted

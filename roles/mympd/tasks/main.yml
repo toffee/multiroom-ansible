@@ -1,7 +1,7 @@
 ---
 - name: install required packages
   apt:
-    deb: https://download.opensuse.org/repositories/home:/jcorporation/Raspbian_10/armhf/mympd_9.0.2-1_armhf.deb
+    deb: https://download.opensuse.org/repositories/home:/jcorporation/Raspbian_10/armhf/mympd_9.0.4-1_armhf.deb
 
 - name: "copy mympd service file"
   template:
@@ -11,16 +11,16 @@
     group: root
     mode: 0644
   notify:
-    - restart mympd-@left
-    - restart mympd-@right
+    - restart mympd-@library
+    - restart mympd-@radio
     
 - name: force systemd to reread configs
   systemd:
     daemon_reload: yes
 
-- name: define variable left
+- name: define variable library
   set_fact:
-    side: "left"
+    side: "library"
     http_port: "6681"
     ssl_port: "6691"
     mpd_host: "127.0.0.1"
@@ -54,9 +54,9 @@
     state: started
     enabled: yes 
 
-- name: define variable right
+- name: define variable radio
   set_fact:
-    side: "right"
+    side: "radio"
     http_port: "6682"
     ssl_port: "6692"
     mpd_host: "127.0.0.1"

@@ -1,19 +1,19 @@
 - name: install snapserver
   apt:
-    deb: "https://github.com/badaix/snapcast/releases/download/v0.25.0/snapserver_0.25.0-1_armhf.deb"
+    deb: "https://github.com/badaix/snapcast/releases/download/v0.26.0/snapserver_0.26.0-1_armhf.deb"
 
 - name: modify snapserver sources
   lineinfile:
     path: "/etc/snapserver.conf"
     insertafter: "^# meta: meta:"
-    line: "source = pipe:///tmp/snapfifoleft?name=Source-Library"
+    line: "source = pipe:///tmp/snapfifolibrary?name=Source-Library"
   notify: restart snapserver
   
 - name: modify snapserver sources
   lineinfile:
     path: "/etc/snapserver.conf"
     insertafter: "^# meta: meta:"
-    line: "source = pipe:///tmp/snapfiforight?name=Source-Radio"
+    line: "source = pipe:///tmp/snapfiforadio?name=Source-Radio"
   notify: restart snapserver
 
 - name: modify snapserver sources
@@ -21,4 +21,11 @@
     path: "/etc/snapserver.conf"
     insertafter: "^# meta: meta:"
     line: "source = airplay:///shairport-sync?name=Source-Airplay"
+  notify: restart snapserver 
+
+- name: remove default source
+  lineinfile:
+    path: "/etc/snapserver.conf"
+    regexp: "source = pipe:///tmp/snapfifo\\?name=default"
+    state: absent
   notify: restart snapserver 

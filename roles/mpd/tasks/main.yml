@@ -7,12 +7,16 @@
     group: root
     mode: 0644
   notify:
-    - restart mpd-@left
-    - restart mpd-@right
+    - restart mpd-@library
+    - restart mpd-@radio
+
+- name: force systemd to reread configs
+  systemd:
+    daemon_reload: yes    
     
-- name: define variable left
+- name: define variable library
   set_fact:
-    side: "left"
+    side: "library"
     mpd_port: "6601"
 
 - name: "copy mpd config '{{side}}'"
@@ -25,9 +29,15 @@
   notify:
     - restart mpd-@{{side}}
  
-- name: define variable right
+- name: Start service mpd-@{{side}}
+  systemd:
+    name: mpd-@{{side}}
+    state: started
+    enabled: yes  
+ 
+- name: define variable radio
   set_fact:
-    side: "right"
+    side: "radio"
     mpd_port: "6602"
 
 - name: "copy mpd config '{{side}}'"
@@ -40,6 +50,12 @@
   notify:
     - restart mpd-@{{side}}
 
+- name: Start service mpd-@{{side}}
+  systemd:
+    name: mpd-@{{side}}
+    state: started
+    enabled: yes  
+
 - name: "copy playlist with radios from Romania"
   template:
     src: "templates/Radio-Romania.m3u"
@@ -48,6 +64,3 @@
     group: audio
     mode: 0666
 
-- name: force systemd to reread configs
-  systemd:
-    daemon_reload: yes
