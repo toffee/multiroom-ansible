@@ -37,6 +37,11 @@
         regexp: 'moode'
         line: 127.0.0.1         {{host_name}}
 
+# fpr meta_mpd.py to work must install:
+# pip install python-mpd2
+#
+        
+
     - name: install additional packages
       apt:
         name: [

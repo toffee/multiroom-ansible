@@ -2,26 +2,48 @@
   apt:
     deb: "https://github.com/badaix/snapcast/releases/download/v0.26.0/snapserver_0.26.0-1_armhf.deb"
 
+- name: define variable library
+  set_fact:
+    side: "library"
+    mpd_port: "6601"
+
+- name: "copy meta_mpd.sh '{{side}}'"
+  template:
+    src: "templates/meta_mpd.sh"
+    dest: "/usr/share/snapserver/plug-ins/meta_mpd_{{side}}.sh"
+    mode: 0755
+
+- name: define variable radio
+  set_fact:
+    side: "radio"
+    mpd_port: "6602"
+    
+- name: "copy meta_mpd.sh '{{side}}'"
+  template:
+    src: "templates/meta_mpd.sh"
+    dest: "/usr/share/snapserver/plug-ins/meta_mpd_{{side}}.sh"
+    mode: 0755
+
 - name: modify snapserver sources
   lineinfile:
     path: "/etc/snapserver.conf"
     insertafter: "^# meta: meta:"
-    line: "source = pipe:///tmp/snapfifolibrary?name=Source-Library"
+    line: "source = pipe:///tmp/snapfifolibrary?name=Source-Library&controlscript=meta_mpd_library.sh"
   notify: restart snapserver
   
 - name: modify snapserver sources
   lineinfile:
     path: "/etc/snapserver.conf"
     insertafter: "^# meta: meta:"
-    line: "source = pipe:///tmp/snapfiforadio?name=Source-Radio"
+    line: "source = pipe:///tmp/snapfiforadio?name=Source-Radio&controlscript=meta_mpd_radio.sh"
   notify: restart snapserver
 
-- name: modify snapserver sources
-  lineinfile:
-    path: "/etc/snapserver.conf"
-    insertafter: "^# meta: meta:"
-    line: "source = airplay:///shairport-sync?name=Source-Airplay"
-  notify: restart snapserver 
+#- name: modify snapserver sources
+#  lineinfile:
+#    path: "/etc/snapserver.conf"
+#    insertafter: "^# meta: meta:"
+#    line: "source = airplay:///shairport-sync?name=Source-Airplay"
+#  notify: restart snapserver 
 
 - name: remove default source
   lineinfile:
