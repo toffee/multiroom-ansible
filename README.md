@@ -1,6 +1,47 @@
 # multiroom-ansible
 Ansible scripts used to install and configure needed tools to setup a multiroom server on moode audio (based on raspberrypi OS). 
 
+# step by step configuration
+Create SD card with moode audio: Use Raspberry Pi Imager to write the image downloaded from https://moodeaudio.org/ to SD card.
+
+Configure the raspberrypi to use the Hifiberry AMP 2:
+
+```
+pi@moode:~ $ cat /boot/config.txt
+disable_splash=1
+disable_overscan=1
+hdmi_drive=2
+hdmi_blanking=1
+hdmi_force_edid_audio=1
+hdmi_force_hotplug=1
+hdmi_group=0
+dtparam=i2c_arm=on
+dtparam=i2s=on
+dtparam=audio=off
+dtoverlay=hifiberry-dacplus
+#dtoverlay=disable-wifi
+#dtoverlay=disable-bt
+force_eeprom_read=0
+```
+
+Connect with ssh to moode (default user name: pi, password: moodeaudio) and clone this repository:
+>git clone https://github.com/toffee/multiroom-ansible.git
+
+Update repositories
+>sudo apt-get update --allow-releaseinfo-change
+
+Install ansible
+>sudo apt install ansible 
+
+Run ansible script
+>cd multiroom-ansible/
+>ansible-playbook -i hosts multiroom.yml
+
+Edit configuration in moode - http://192.168.120.71/
+ * Audio>Named device and reboot (sudo systemmctl reboot)
+ * System>Timezone
+ * System>Host name
+ * Audio>MPD Settings>Volume type - Hardware.
 
 # ports in use
 
@@ -45,5 +86,69 @@ sqlite3 /var/local/www/db/moode-sqlite3.db "SELECT value FROM cfg_system WHERE p
 sqlite3 /var/local/www/db/moode-sqlite3.db "select param, value from cfg_system"
 sudo fuser 80/tcp
 journalctl -u mympd-@left
+
+cat /var/lib/alsa/asound.state
 ```
 
+#Known problems
+
+The ansible script change the name of the host using command
+>hostnamectl set-hostname {{host_name}}
+but this does not update the /etc/hosts file (the 127.0.0.1 still points to the old hostname). This lead to the error
+>sudo: unable to resolve host moode-one: Name or service not known
+to be written into /tmp/cfg_audiodev.sql (the files that is check for integrity in function integrityCheck from /var/www/inc/playerlib.php
+The worker.php does not start and write to the log /var/log/moode.log
+
+```
+20211212 224638 worker: -- Start
+20211212 224638 worker: Successfully daemonized
+20211212 224639 worker: Integrity check (failed:3)
+20211212 224639 worker: Exited
+```
+
+
+Sometimes the sound stops working... seems that it's due to moode audio put the "Digital" mixer on mute.
+Check the asound.state file from /var/lib/alsa/asound.state and see the consfiguration:
+```
+	control.1 {
+		iface MIXER
+		name 'Digital Playback Volume'
+		value.0 0
+		value.1 0
+		comment {
+			access 'read write'
+			type INTEGER
+			count 2
+			range '0 - 207'
+			dbmin -9999999
+			dbmax 0
+			dbvalue.0 -9999999
+			dbvalue.1 -9999999
+		}
+	}
+```
+
+To hear sound should be something like:
+```
+	control.1 {
+		iface MIXER
+		name 'Digital Playback Volume'
+		value.0 163
+		value.1 163
+		comment {
+			access 'read write'
+			type INTEGER
+			count 2
+			range '0 - 207'
+			dbmin -9999999
+			dbmax 0
+			dbvalue.0 -2200
+			dbvalue.1 -2200
+		}
+	}
+```
+Altering the mixer from alsamixer seems to solve the problem.
+
+
+
+https://github.com/skalavala/Multi-Room-Audio-Centralized-Audio-for-Home
