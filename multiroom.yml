@@ -10,6 +10,7 @@
     - name: define variable moode
       set_fact:
         moode: "{{ (ansible_facts['eth0'].macaddress == macaddress_one) | ternary ('one', 'two') }}"
+      tags: always 
         
     - name: load specific vars
       include_vars: "config/{{moode}}.yml"
@@ -49,6 +50,7 @@
           mc
         ]
         state: present 
+      tags: always 
 
   roles:
     - role: alsa
@@ -59,3 +61,6 @@
       when: moode == 'one'
     - role: mympd
       when: moode == 'one'
+    - role: mysgw
+      tags: mysgw
+      when: moode == 'two'

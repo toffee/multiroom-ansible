@@ -1,0 +1,26 @@
+---
+- name: initialize variables
+  set_fact:
+    git_clone_url: "https://github.com/mysensors/MySensors.git"
+    git_clone_path: "/home/pi/MySensors-development"
+    git_clone_version: "development"
+    
+
+- name: clone MySensors git repository
+  git:
+    repo: '{{git_clone_url}}'
+    dest: '{{git_clone_path}}'
+    version: "{{git_clone_version | default('master')}}"
+    
+- name: 
+  shell: |
+    cd {{git_clone_path}}
+    ./configure --my-transport=rf24 --my-gateway=mqtt --my-controller-ip-address=192.168.120.5 --my-mqtt-publish-topic-prefix=my/stat --my-mqtt-subscribe-topic-prefix=my/cmnd --my-mqtt-client-id=mysgw --my-rf24-pa-level=RF24_PA_HIGH --extra-cxxflags="-DMY_RF24_DATARATE=\(RF24_250KBPS\)"
+    make
+    sudo make install
+
+- name: Start service mysgw
+  systemd:
+    name: mysgw
+    state: started
+    enabled: yes  
