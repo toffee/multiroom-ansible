@@ -55,11 +55,15 @@
   roles:
     - role: alsa
     - role: snapserver
+      tags: snapserver
       when: moode == 'one'
     - role: snapclient
+      tags: snapclient
     - role: mpd
+      tags: mpd
       when: moode == 'one'
     - role: mympd
+      tags: mympd
       when: moode == 'one'
     - role: mysgw
       tags: mysgw
