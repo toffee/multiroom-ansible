@@ -3,6 +3,7 @@ Ansible scripts used to install and configure needed tools to setup a multiroom 
 
 # step by step configuration
 Create SD card with moode audio: Use Raspberry Pi Imager to write the image downloaded from https://moodeaudio.org/ to SD card.
+TODO: To verify/test if this infrastructure work on plain Rapsberry Pi OS Lite - https://www.raspberrypi.com/software/operating-systems/
 
 Configure the raspberrypi to use the Hifiberry AMP 2:
 
@@ -24,18 +25,18 @@ dtoverlay=hifiberry-dacplus
 force_eeprom_read=0
 ```
 
-Connect with ssh to moode (default user name: pi, password: moodeaudio) and clone this repository:
+Connect with ssh to control node and clone this repository. Contol node in my case is jupiter, but can be the moode itself - default user name: pi, password: moodeaudio.
 >git clone https://github.com/toffee/multiroom-ansible.git
 
-Update repositories
+Update repositories on control node (bellow the commen for raspberry pi) 
 >sudo apt-get update --allow-releaseinfo-change
 
-Install ansible
+Install ansible on control node 
 >sudo apt install ansible 
 
-Run ansible script
+Run ansible script on specific node/host (the -l switch) or on all configured nodes (without -l)
 >cd multiroom-ansible/
->ansible-playbook -i hosts multiroom.yml
+>ansible-playbook -i hosts.yml -l moode01 multiroom.yml
 
 Edit configuration in moode - http://192.168.120.71/
  * Audio>Named device and reboot (sudo systemmctl reboot)
