@@ -1,1 +1,1 @@
-/var/lib/mympd-{{side}}/ssl/moode01.toffee.ro-privkey.pem
+/var/lib/mympd-{{side}}/ssl/privkey.pem

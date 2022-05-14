@@ -36,6 +36,14 @@
   with_filetree: "templates/workingdir/"
   when: item.state == 'directory'
 
+- name: "create cache directory '{{side}}'"
+  file:
+    path: "/var/cache/mympd-{{side}}"
+    state: directory
+    owner: mympd
+    group: mympd
+    mode: '0755'
+
 - name: "copy mympd workingdir '{{side}}'"
   template:
     src: "{{item.src}}"
@@ -47,6 +55,17 @@
   when: item.state == 'file'
   notify:
     - restart mympd-@{{side}}
+
+- name: "copy mympd certificates '{{side}}'"
+  copy:
+    src: "/dataDisk/etc/letsencrypt/live/moode01.toffee.ro/{{item}}"
+    dest: "/var/lib/mympd-{{side}}/ssl/"
+    owner: mympd
+    group: mympd
+    mode: 0755
+  loop:
+    - cert.pem
+    - privkey.pem
 
 - name: Start service mympd-@{{side}}
   systemd:
@@ -72,6 +91,14 @@
   with_filetree: "templates/workingdir/"
   when: item.state == 'directory'
 
+- name: "create cache directory '{{side}}'"
+  file:
+    path: "/var/cache/mympd-{{side}}"
+    state: directory
+    owner: mympd
+    group: mympd
+    mode: '0755'
+
 - name: "copy mympd workingdir '{{side}}'"
   template:
     src: "{{item.src}}"
@@ -83,6 +110,17 @@
   when: item.state == 'file'
   notify:
     - restart mympd-@{{side}}
+
+- name: "copy mympd certificates '{{side}}'"
+  copy:
+    src: "/dataDisk/etc/letsencrypt/live/moode01.toffee.ro/{{item}}"
+    dest: "/var/lib/mympd-{{side}}/ssl/"
+    owner: mympd
+    group: mympd
+    mode: 0755
+  loop:
+    - cert.pem
+    - privkey.pem
 
 - name: Start service mympd-@{{side}}
   systemd:

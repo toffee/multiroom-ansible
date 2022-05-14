@@ -9,7 +9,7 @@ Requires=network.target local-fs.target
 After=mpd-%i.service
 
 [Service]
-ExecStart=/usr/bin/mympd -u mympd -w /var/lib/mympd-%i
+ExecStart=/usr/bin/mympd -u mympd -w /var/lib/mympd-%i -a /var/cache/mympd-%i
 Type=simple
 
 # disallow writing to /usr, /bin, /sbin, ...
