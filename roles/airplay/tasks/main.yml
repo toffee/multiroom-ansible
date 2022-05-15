@@ -1,0 +1,20 @@
+---
+- name: install shairport-sync package
+  apt:
+    name: shairport-sync
+
+- name: Copy shairport-sync file, backing up the original
+  ansible.builtin.copy:
+    src: "templates/shairport-sync.conf" 
+    dest: /etc/shairport-sync.conf
+    owner: root
+    group: root
+    mode: '0644'
+    backup: yes
+
+- name: Start service shairport-sync
+  systemd:
+    name: shairport-sync
+    state: started
+    enabled: yes 
+

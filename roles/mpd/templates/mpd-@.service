@@ -3,7 +3,7 @@ Description=Music Player Daemon %i
 After=network.target sound.target
 
 [Service]
-ExecStart=/usr/local/bin/mpd --no-daemon /etc/mpd-%i.conf
+ExecStart=/usr/bin/mpd --no-daemon /etc/mpd-%i.conf
 
 [Install]
 WantedBy=multi-user.target

@@ -1,7 +1,6 @@
 ---
 - name: install snapclient
   apt:
-    #deb: "https://github.com/badaix/snapcast/releases/download/v0.25.0/snapclient_0.25.0-1_without-pulse_armhf.deb"
     deb: "https://github.com/badaix/snapcast/releases/download/v0.26.0/snapclient_0.26.0-1_without-pulse_armhf.deb"
 
 - name: disable original snapclient init.d

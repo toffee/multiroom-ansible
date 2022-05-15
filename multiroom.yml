@@ -33,11 +33,6 @@
         regexp: 'moode'
         line: 127.0.0.1         {{host_name}}
 
-# fpr meta_mpd.py to work must install:
-# pip install python-mpd2
-#
-        
-
     - name: install additional packages
       apt:
         name: [
@@ -59,6 +54,9 @@
       when: moode == 'one'
     - role: mympd
       tags: mympd
+      when: moode == 'one'
+    - role: airplay
+      tags: airplay
       when: moode == 'one'
     - role: mysgw
       tags: mysgw
