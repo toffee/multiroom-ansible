@@ -25,20 +25,42 @@ dtoverlay=hifiberry-dacplus
 force_eeprom_read=0
 ```
 
-Connect with ssh to control node and clone this repository. Contol node in my case is jupiter, but can be the moode itself - default user name: pi, password: moodeaudio.
+Modify /boot/moodecfg.ini (rename on SDCard file /boot/moodecfg.ini.default) at least the following:
+>hostname = "moode01"
+>timezone = "Europe/Bucharest"
+>i2sdevice = "HiFiBerry Amp2"
+>mixer_type = "hardware"
+>first_use_help = "No"
+>source_name[0] = "nfs-ds-music"
+>source_type[0] = "nfs"
+>source_address[0] = "192.168.120.4"
+>source_remotedir[0] = "volume1/music"
+>source_username[0] = ""
+>source_password[0] = ""
+>source_charset[0] = "utf8"
+>source_rsize[0] = "61440"
+>source_wsize[0] = "65536"
+>source_options[0] = "ro,nolock"
+
+
+Connect with ssh to control node and clone this repository. Control node in my case is jupiter, but can be the moode itself - default user name: pi, password: moodeaudio.
 >git clone https://github.com/toffee/multiroom-ansible.git
 
-Update repositories on control node (bellow the commen for raspberry pi) 
+Update repositories on control node (bellow the command for raspberry pi) 
 >sudo apt-get update --allow-releaseinfo-change
 
 Install ansible on control node 
 >sudo apt install ansible 
 
+Configure public key authentication from jupiter to moode:
+>ssh-copy-id -i ~/git/smartserver/config/jupiter/vault/ssh_auth/auth-moode01.toffee.ro.pub pi@moode01.toffee.ro
+
 Run ansible script on specific node/host (the -l switch) or on all configured nodes (without -l)
 >cd multiroom-ansible/
 >ansible-playbook -i hosts.yml -l moode01 multiroom.yml
 
-Edit configuration in moode - http://192.168.120.71/
+The following are not needed if made the auto-configure at boot in /boot/moodecfg.ini, but make sense to verify.
+Edit configuration in moode - http://192.168.120.71/ (or http://moode01.toffee.ro)
  * Audio>Named device and reboot (sudo systemmctl reboot)
  * System>Timezone
  * System>Host name
