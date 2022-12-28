@@ -2,11 +2,15 @@
   become: true
 
   pre_tasks:
+    # load vault file
+    - name: load vault vars
+      include_vars: "config/vault/vault.yml"
+      tags: always 
+      
     # load shared variables
     - name: load shared vars
       include_vars: "config/shared.yml"
       tags: always 
-      
   
     - name: loaded values from config files
       debug:

@@ -53,6 +53,13 @@
     line: "source = pipe:///tmp/snapfifoairplay?name=Source-Airplay&sampleformat=44100:16:2"
   notify: restart snapserver 
 
+- name: modify snapserver sources
+  lineinfile:
+    path: "/etc/snapserver.conf"
+    insertafter: "^# meta: meta:"
+    line: "source = spotify:///librespot?name=Source-Spotify&username={{vault_spotify_username}}&password={{vault_spotify_password}}&devicename=Snapcast&bitrate=320&disable_audio_cache=true&killall=true"
+  notify: restart snapserver
+
 - name: remove default source
   lineinfile:
     path: "/etc/snapserver.conf"
