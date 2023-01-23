@@ -175,3 +175,10 @@ Altering the mixer from alsamixer seems to solve the problem.
 
 
 https://github.com/skalavala/Multi-Room-Audio-Centralized-Audio-for-Home
+
+Nice redings:
+
+https://www.reddit.com/r/homeassistant/comments/fmbskz/please_recommend_me_a_multi_room_audio_setup/
+https://github.com/markferry/multizone-audio
+https://github.com/ahayworth/snapcast-autoconfig
+https://github.com/Burningstone91/smart-home-setup
