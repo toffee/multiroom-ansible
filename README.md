@@ -182,3 +182,7 @@ https://www.reddit.com/r/homeassistant/comments/fmbskz/please_recommend_me_a_mul
 https://github.com/markferry/multizone-audio
 https://github.com/ahayworth/snapcast-autoconfig
 https://github.com/Burningstone91/smart-home-setup
+
+Integrating openHAB with snapcast via PulseAudio:
+ * https://community.openhab.org/t/audio-playback-with-openhab-and-snapcast/137584/6
+ * https://github.com/shivasiddharth/PulseAudio-System-Wide/

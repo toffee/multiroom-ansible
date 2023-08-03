@@ -1,0 +1,59 @@
+- name: install pulseaudio
+  apt:
+    name: pulseaudio
+    state: present
+
+- name: "copy system.pa"
+  template:
+    src: "templates/etc/pulse/system.pa"
+    dest: "/etc/pulse/system.pa"
+    mode: u=rw,g=r,o=r
+  notify:
+    - restart pulseaudio
+
+# Many distributions use systemd to start per-user instances of PulseAudio. 
+# When using the system mode, the PulseAudio user services need to be disabled in systemd
+# sudo systemctl --global disable pulseaudio.service pulseaudio.socket
+- name: stop and disable original (user) pulseaudio.service
+  systemd:
+    name: pulseaudio.service
+    state: stopped
+    enabled: no
+    scope: global
+  ignore_errors: true
+
+- name: stop and disable pulseaudio.service
+  systemd:
+    name: pulseaudio.socket
+    state: stopped
+    enabled: no
+    scope: global
+  ignore_errors: true
+
+#https://github.com/shivasiddharth/PulseAudio-System-Wide/
+
+- name: "copy pulseaudio.service"
+  template:
+    src: "templates/lib/systemd/system/pulseaudio.service"
+    dest: "/lib/systemd/system/pulseaudio.service"
+    mode: u=rw,g=r,o=r
+  notify:
+    - restart pulseaudio
+
+- name: force systemd to reread configs
+  systemd:
+    daemon_reload: yes
+
+- name: adding root to group pulse-access
+  user:
+    name: root
+    groups: pulse-access
+    append: yes
+  notify:
+    - restart pulseaudio
+
+- name: start and enable pulseaudio.service
+  systemd:
+    name: pulseaudio.service
+    state: started
+    enabled: yes

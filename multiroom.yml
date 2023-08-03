@@ -65,3 +65,6 @@
     - role: mysgw
       tags: mysgw
       when: moode == 'two'
+    - role: pulseaudio
+      tags: pulseaudio
+      when: moode == 'one'
