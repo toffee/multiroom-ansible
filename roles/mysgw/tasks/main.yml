@@ -1,4 +1,10 @@
 ---
+- name: install additional packages
+  apt:
+    name: git
+    state: present 
+  tags: always
+      
 - name: initialize variables
   set_fact:
     git_clone_url: "https://github.com/mysensors/MySensors.git"
