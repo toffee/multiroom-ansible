@@ -1,6 +1,6 @@
 - name: install snapserver
   apt:
-    deb: "https://github.com/badaix/snapcast/releases/download/v0.26.0/snapserver_0.26.0-1_armhf.deb"
+    deb: "https://github.com/badaix/snapcast/releases/download/v0.29.0/snapserver_0.29.0-1_arm64_bullseye.deb"
 
 # for meta_mpd.py to work must install:
 # pip install python-mpd2
