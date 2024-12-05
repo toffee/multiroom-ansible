@@ -43,13 +43,13 @@ fi
 #logger "Vol $VOL Mute $MUTE"
 
 if [ "$side" = "left" ]; then
-    amixer -M -c {{alsa_card}} -- sset '{{alsa_mixer}}',0 $VOL%,0+
-    amixer -M -c {{alsa_card}} -- sset '{{alsa_mixer}}',0 $MUTE,0+
+    amixer -q -M -c {{alsa_card}} -- sset '{{alsa_mixer}}',0 $VOL%,0+
+    amixer -q -M -c {{alsa_card}} -- sset '{{alsa_mixer}}',0 $MUTE,0+
     exit
 fi
 
 if [ "$side" = "right" ]; then
-    amixer -M -c {{alsa_card}} -- sset '{{alsa_mixer}}',0 0+,$VOL%
-    amixer -M -c {{alsa_card}} -- sset '{{alsa_mixer}}',0 0+,$MUTE
+    amixer -q -M -c {{alsa_card}} -- sset '{{alsa_mixer}}',0 0+,$VOL%
+    amixer -q -M -c {{alsa_card}} -- sset '{{alsa_mixer}}',0 0+,$MUTE
     exit
 fi
