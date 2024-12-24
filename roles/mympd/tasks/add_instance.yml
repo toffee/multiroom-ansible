@@ -1,0 +1,46 @@
+- name: "{{instance}} - create working directory'"
+  file:
+    path: "/var/lib/mympd-{{instance}}/{{item.path}}"
+    state: directory
+    owner: mympd
+    group: mympd
+    mode: '0755'
+  with_filetree: "templates/workingdir/"
+  when: item.state == 'directory'
+
+- name: "{{instance}} - create cache directory"
+  file:
+    path: "/var/cache/mympd-{{instance}}"
+    state: directory
+    owner: mympd
+    group: mympd
+    mode: '0755'
+
+- name: " '{{instance}} - copy mympd workingdir"
+  template:
+    src: "{{item.src}}"
+    dest: "/var/lib/mympd-{{instance}}/{{item.path}}"
+    owner: mympd
+    group: mympd
+    mode: 0755
+  with_filetree: "templates/workingdir/"
+  when: item.state == 'file'
+  notify:
+    - restart mympd-@{{instance}}
+
+- name: "{{instance}} - copy mympd certificates"
+  copy:
+    src: "/smartserver/etc/letsencrypt/live/snapserver.toffee.ro/{{item}}"
+    dest: "/var/lib/mympd-{{instance}}/ssl/"
+    owner: mympd
+    group: mympd
+    mode: 0755
+  loop:
+    - cert.pem
+    - privkey.pem
+
+- name: "{{instance}} - start service mympd-@{{instance}}"
+  systemd:
+    name: mympd-@{{instance}}
+    state: started
+    enabled: yes 

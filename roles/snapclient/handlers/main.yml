@@ -8,3 +8,8 @@
   service:
     name: snapclient@right
     state: restarted
+
+- name: restart snapclient@stereo
+  service:
+    name: snapclient@stereo
+    state: restarted

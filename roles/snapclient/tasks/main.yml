@@ -1,7 +1,7 @@
 ---
 - name: install snapclient
   apt:
-    deb: "https://github.com/badaix/snapcast/releases/download/v0.29.0/snapclient_0.29.0-1_arm64_bullseye.deb"
+    deb: "https://github.com/badaix/snapcast/releases/download/v0.29.0/snapclient_0.29.0-1_arm64_bookworm.deb"
 
 - name: disable original snapclient init.d
   lineinfile:
@@ -9,87 +9,37 @@
     regexp: "^START_SNAPCLIENT="
     line: "START_SNAPCLIENT=false"
 
-- name: configure snapclient left
-  lineinfile:
-    path: "/etc/default/snapclient"
-    line: "SNAPCLIENT_OPTS_left=\"{{ snapclient_left_opts }}\""
-  notify: 
-    - restart snapclient@left
-    - restart snapclient@right
-
-- name: configure snapclient right
-  lineinfile:
-    path: "/etc/default/snapclient"
-    line: "SNAPCLIENT_OPTS_right=\"{{ snapclient_right_opts }}\""
-  notify: 
-    - restart snapclient@left
-    - restart snapclient@right
-
 - name: stop original snapclient if running
   systemd:
     name: snapclient
     state: stopped
     enabled: no
 
-- name: check if original systemd unit file exists
-  stat: path=/lib/systemd/system/snapclient.service
-  register: original_unit
+# this directory is owned by original user _snapclient (probbaly come from the raspberry package instalation)
+- name: fix home directory permission for user snapclient
+  ansible.builtin.file:
+    path: /var/lib/snapclient
+    owner: snapclient
+    group: snapclient
+    mode: '0700'
 
-- name: "copy snapclient service file"
-  template:
-    src: "templates/snapclient@.service"
-    dest: "/lib/systemd/system/snapclient@.service"
-    owner: root
-    group: root
-    mode: 0644
-  notify:
-    - restart snapclient@left
-    - restart snapclient@right
+- name: configure instance left
+  vars:
+    instance: "left"
+    config: "{{snapclient_left_opts}}"
+  include_tasks: add_instance.yml
+  when: snapclient_left_opts is defined
 
-- name: force systemd to reread configs
-  systemd:
-    daemon_reload: yes
-    
-- name: "copy volume.sh"
-  template:
-    src: "templates/volume.sh"
-    dest: "/usr/local/bin/volume.sh"
-    owner: root
-    group: root
-    mode: 0755    
-    
-- name: define variable left
-  set_fact:
-    side: "left"
-
-- name: "copy volume-{{side}}.sh"
-  template:
-    src: "templates/volume-side.sh"
-    dest: "/usr/local/bin/volume-{{side}}.sh"
-    owner: root
-    group: root
-    mode: 0755
-    
-- name: Start service snapclient@{{side}}
-  systemd:
-    name: snapclient@{{side}}
-    state: started
-    enabled: yes
- 
-- name: define variable right
-  set_fact:
-    side: "right"
-
-- name: "copy volume-{{side}}.sh"
-  template:
-    src: "templates/volume-side.sh"
-    dest: "/usr/local/bin/volume-{{side}}.sh"
-    owner: root
-    group: root
-    mode: 0755
- 
-- name: Start service snapclient@{{side}}
-  systemd:
-    name: snapclient@{{side}}
-    state: started
-    enabled: yes
+- name: configure instance right
+  vars:
+    instance: "right"
+    config: "{{snapclient_right_opts}}"
+  include_tasks: add_instance.yml
+  when: snapclient_right_opts is defined
+  
+- name: configure instance stereo
+  vars:
+    instance: "stereo"
+    config: "{{snapclient_stereo_opts}}"
+  include_tasks: add_instance.yml
+  when: snapclient_stereo_opts is defined

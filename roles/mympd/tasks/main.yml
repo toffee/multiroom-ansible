@@ -1,7 +1,7 @@
 ---
 - name: install required packages
   apt:
-    deb: https://download.opensuse.org/repositories/home:/jcorporation/Raspbian_10/armhf/mympd_9.3.1-1_armhf.deb
+    deb: https://download.opensuse.org/repositories/home:/jcorporation/Raspbian_11/armhf/mympd_18.2.2-1_armhf.deb
 
 - name: "copy mympd service file"
   template:
@@ -18,112 +18,20 @@
   systemd:
     daemon_reload: yes
 
-- name: define variable library
-  set_fact:
-    side: "library"
+- name: configure instance library
+  vars:
+    instance: "library"
     http_port: "6681"
     ssl_port: "6691"
     mpd_host: "127.0.0.1"
     mpd_port: "6601"
+  include_tasks: add_instance.yml
 
-- name: "create working directory '{{side}}'"
-  file:
-    path: "/var/lib/mympd-{{side}}/{{item.path}}"
-    state: directory
-    owner: mympd
-    group: mympd
-    mode: '0755'
-  with_filetree: "templates/workingdir/"
-  when: item.state == 'directory'
-
-- name: "create cache directory '{{side}}'"
-  file:
-    path: "/var/cache/mympd-{{side}}"
-    state: directory
-    owner: mympd
-    group: mympd
-    mode: '0755'
-
-- name: "copy mympd workingdir '{{side}}'"
-  template:
-    src: "{{item.src}}"
-    dest: "/var/lib/mympd-{{side}}/{{item.path}}"
-    owner: mympd
-    group: mympd
-    mode: 0755
-  with_filetree: "templates/workingdir/"
-  when: item.state == 'file'
-  notify:
-    - restart mympd-@{{side}}
-
-- name: "copy mympd certificates '{{side}}'"
-  copy:
-    src: "/dataDisk/etc/letsencrypt/live/moode01.toffee.ro/{{item}}"
-    dest: "/var/lib/mympd-{{side}}/ssl/"
-    owner: mympd
-    group: mympd
-    mode: 0755
-  loop:
-    - cert.pem
-    - privkey.pem
-
-- name: Start service mympd-@{{side}}
-  systemd:
-    name: mympd-@{{side}}
-    state: started
-    enabled: yes 
-
-- name: define variable radio
-  set_fact:
-    side: "radio"
+- name: configure instance radio
+  vars:
+    instance: "radio"
     http_port: "6682"
-    ssl_port: "6692"
+    ssl_port: "6693"
     mpd_host: "127.0.0.1"
     mpd_port: "6602"
-
-- name: "create working directory '{{side}}'"
-  file:
-    path: "/var/lib/mympd-{{side}}/{{item.path}}"
-    state: directory
-    owner: mympd
-    group: mympd
-    mode: '0755'
-  with_filetree: "templates/workingdir/"
-  when: item.state == 'directory'
-
-- name: "create cache directory '{{side}}'"
-  file:
-    path: "/var/cache/mympd-{{side}}"
-    state: directory
-    owner: mympd
-    group: mympd
-    mode: '0755'
-
-- name: "copy mympd workingdir '{{side}}'"
-  template:
-    src: "{{item.src}}"
-    dest: "/var/lib/mympd-{{side}}/{{item.path}}"
-    owner: mympd
-    group: mympd
-    mode: 0755
-  with_filetree: "templates/workingdir/"
-  when: item.state == 'file'
-  notify:
-    - restart mympd-@{{side}}
-
-- name: "copy mympd certificates '{{side}}'"
-  copy:
-    src: "/dataDisk/etc/letsencrypt/live/moode01.toffee.ro/{{item}}"
-    dest: "/var/lib/mympd-{{side}}/ssl/"
-    owner: mympd
-    group: mympd
-    mode: 0755
-  loop:
-    - cert.pem
-    - privkey.pem
-
-- name: Start service mympd-@{{side}}
-  systemd:
-    name: mympd-@{{side}}
-    state: started
-    enabled: yes 
+  include_tasks: add_instance.yml

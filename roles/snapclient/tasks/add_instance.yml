@@ -1,0 +1,40 @@
+- name: "{{instance}} - configure"
+  lineinfile:
+    path: "/etc/default/snapclient"
+    line: "SNAPCLIENT_OPTS_{{instance}}=\"{{config}}\""
+  notify: restart snapclient@{{instance}}
+
+- name: "{{instance}} - copy snapclient service file"
+  template:
+    src: "templates/snapclient@.service"
+    dest: "/lib/systemd/system/snapclient@.service"
+    owner: root
+    group: root
+    mode: 0644
+
+- name: "{{instance}} - force systemd to reread configs"
+  systemd:
+    daemon_reload: yes
+    
+- name: "{{instance}} - copy volume.sh"
+  template:
+    src: "templates/volume.sh"
+    dest: "/usr/local/bin/volume.sh"
+    owner: root
+    group: root
+    mode: 0755
+
+- name: "{{instance}} - copy volume-{{instance}}.sh"
+  template:
+    src: "templates/volume-instance.sh"
+    dest: "/usr/local/bin/volume-{{instance}}.sh"
+    owner: root
+    group: root
+    mode: 0755
+
+#- name: "{{instance}} - start service snapclient@{{instance}}"
+#  systemd:
+#    name: snapclient@{{instance}}
+#    state: started
+#    enabled: yes
+#    daemon_reload: yes

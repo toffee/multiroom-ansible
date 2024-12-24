@@ -7,27 +7,12 @@
       include_vars: "config/vault/vault.yml"
       tags: always 
       
-    # load shared variables
-    - name: load shared vars
-      include_vars: "config/shared.yml"
-      tags: always 
-  
     - name: loaded values from config files
       debug:
         msg: 
-          - "mac address:           {{ansible_facts['eth0'].macaddress}}"
-          - "macaddress:            {{macaddress}}"
           - "host_name:             {{host_name}}"
-          - "moode:                 {{moode}}"
-          - "snapserver host:       {{snapserver_host}}"
-          - "snapserver port:       {{snapserver_port}}"
-          - "alsa card:             {{alsa_card}}"
-          - "alsa mixer:            {{alsa_mixer}}"
-          - "snapclient left opt:   {{snapclient_left_opts}}"
-          - "snapclient right opt:  {{snapclient_right_opts}}"
       tags: always 
 
-      
     - name: set hostname
       shell: 'hostnamectl set-hostname {{host_name}}'
       changed_when: "ansible_hostname != host_name"
@@ -48,24 +33,23 @@
       tags: always 
 
   roles:
+    - role: raspberrypi
+      when: inventory_hostname == 'universum'
     - role: alsa
     - role: snapserver
       tags: snapserver
-      when: moode == 'one'
+      when: isserver | bool
     - role: snapclient
       tags: snapclient
     - role: mpd
       tags: mpd
-      when: moode == 'one'
+      when: isserver | bool
     - role: mympd
       tags: mympd
-      when: moode == 'one'
+      when: isserver | bool
     - role: airplay
       tags: airplay
-      when: moode == 'one'
-    - role: mysgw
-      tags: mysgw
-      when: moode == 'two'
+      when: isserver | bool
     - role: pulseaudio
       tags: pulseaudio
-      when: moode == 'one'
+      when: isserver | bool

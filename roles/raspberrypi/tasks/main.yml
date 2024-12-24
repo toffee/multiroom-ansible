@@ -1,0 +1,5 @@
+- name: "copy /boot/firmware/config.txt"
+  template:
+    src: "templates/boot/firmware/{{inventory_hostname}}-config.txt"
+    dest: "/boot/firmware/config.txt"
+    mode: 0755

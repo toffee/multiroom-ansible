@@ -1,6 +1,8 @@
 # multiroom-ansible
 Ansible scripts used to install and configure needed tools to setup a multiroom server on moode audio (based on raspberrypi OS). 
 
+This repository contains files for universum - raspberry pi zero 2w with hifiberry miniamp used as snapclient for old Quelle Universum 309503 speakers.
+
 # step by step configuration
 Create SD card with moode audio: Use Raspberry Pi Imager to write the image downloaded from https://moodeaudio.org/ to SD card.
 TODO: To verify/test if this infrastructure work on plain Rapsberry Pi OS Lite - https://www.raspberrypi.com/software/operating-systems/
@@ -52,12 +54,14 @@ Update repositories on control node (bellow the command for raspberry pi)
 Install ansible on control node 
 >sudo apt install ansible 
 
-Configure public key authentication from jupiter to moode:
->ssh-copy-id -i ~/git/smartserver/config/jupiter/vault/ssh_auth/auth-moode01.toffee.ro.pub pi@moode01.toffee.ro
+Configure public key authentication from jupiter to moode/universum:
+>ssh-copy-id -i ~/git/toffee/smartserver/config/jupiter/vault/ssh_auth/auth-moode01.toffee.ro.pub pi@moode01.toffee.ro
+>ssh-copy-id -i ~/git/toffee/smartserver/config/jupiter/vault/ssh_auth/universum.toffee.ro.pub daniel@universum.toffee.ro
 
 Run ansible script on specific node/host (the -l switch) or on all configured nodes (without -l)
 >cd multiroom-ansible/
->ansible-playbook -i hosts.yml -l moode01 multiroom.yml
+>ansible-playbook -i hosts.yml -l universum multiroom.yml
+>ansible-playbook -i hosts.yml -l snapserver multiroom.yml
 
 The following are not needed if made the auto-configure at boot in /boot/moodecfg.ini, but make sense to verify.
 Edit configuration in moode - http://192.168.120.71/ (or http://moode01.toffee.ro)

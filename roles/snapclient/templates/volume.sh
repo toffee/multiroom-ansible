@@ -53,3 +53,8 @@ if [ "$side" = "right" ]; then
     amixer -q -M -c {{alsa_card}} -- sset '{{alsa_mixer}}',0 0+,$MUTE
     exit
 fi
+
+#No side provided means stereo
+amixer -q -M -c {{alsa_card}} -- sset '{{alsa_mixer}}',0 $VOL%,$VOL%
+# Bellow command returns "amixer: Invalid command!" but without the mute/unmute is working but I don't know why/who!?
+#amixer -q -M -c {{alsa_card}} -- sset '{{alsa_mixer}}',0 $MUTE,$MUTE

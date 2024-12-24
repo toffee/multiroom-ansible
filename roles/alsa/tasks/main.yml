@@ -1,13 +1,12 @@
 - name: copy alsa configuration
-  copy:
-    src: "{{item}}"
-    dest: "/etc/alsa/conf.d/"
+  template:
+    src: "templates{{item}}"
+    dest: "{{item}}"
     owner: root
     group: root
     mode: 0755
   with_items:
-    - "templates/_common.conf"
-    - "templates/_left.conf"
-    - "templates/_right.conf"
-    - "templates/_mono.conf"
- 
+    - "/etc/alsa/conf.d/_common.conf"
+    - "/etc/alsa/conf.d/_left.conf"
+    - "/etc/alsa/conf.d/_right.conf"
+    - "/etc/alsa/conf.d/_mono.conf"
